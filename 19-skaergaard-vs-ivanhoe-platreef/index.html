@@ -1,100 +1,98 @@
-<!DOCTYPE html><html lang="en"> <head>
-<style>/* Greenland Mining Insider - broadsheet */
-*,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;padding:0;font-family:'Source Sans 3',-apple-system,BlinkMacSystemFont,sans-serif;line-height:1.7;color:#1a202c;background:#f7fafc}
-h1,h2,h3,h4,h5,h6{font-family:'Playfair Display',Georgia,serif;color:#1a202c;line-height:1.25;margin:0 0 .5em}
-a{color:#38a169;text-decoration:none}a:hover{text-decoration:underline}
-img{max-width:100%;height:auto}
-.site-nav{position:sticky;top:0;z-index:50;background:#1a365d;border-bottom:none}
-.nav-inner{max-width:72rem;margin:0 auto;padding:.875rem 1rem;display:flex;align-items:center;justify-content:space-between}
-@media(min-width:640px){.nav-inner{padding:.875rem 1.5rem}}
-.site-logo{font-family:'Playfair Display',Georgia,serif;font-size:1.25rem;font-weight:700;color:#ffffff;text-decoration:none;letter-spacing:-.02em}
-@media(min-width:768px){.site-logo{font-size:1.5rem}}
-.nav-links{display:none;align-items:center;gap:1.5rem;font-size:.875rem;font-weight:500}
-@media(min-width:768px){.nav-links{display:flex}}
-.nav-links a{color:#ffffff;text-decoration:none;opacity:.8;transition:opacity .15s}
-.nav-links a:hover{opacity:1;text-decoration:none}
-.hero{position:relative;overflow:hidden;background:linear-gradient(135deg, #1a365d 0%, #1a365ddd 100%);padding:3rem 1rem}
-@media(min-width:640px){.hero{padding:4rem 1.5rem}}
-@media(min-width:768px){.hero{padding:5rem 1.5rem}}
-.hero-inner{position:relative;max-width:72rem;margin:0 auto}
-.hero h1{font-size:2rem;font-weight:800;color:#ffffff;line-height:1.15}
-@media(min-width:640px){.hero h1{font-size:2.5rem}}
-@media(min-width:768px){.hero h1{font-size:3rem}}
-.hero .subtitle{margin-top:1rem;font-size:1.125rem;color:rgba(255,255,255,0.7);max-width:42rem;line-height:1.65}
-.hero-badges{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.25rem}
-.badge{display:inline-block;padding:.2rem .65rem;font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;border-radius:9999px}
-.badge-accent{background:#38a169;color:white}
-.badge-muted{background:rgba(255,255,255,.15);color:#ffffff}
-.hero-ctas{margin-top:1.75rem;display:flex;flex-wrap:wrap;gap:.75rem}
-.cta-primary{display:inline-block;padding:.625rem 1.5rem;background:linear-gradient(135deg, #1a365d 0%, #1a365ddd 100%);color:#1a365d;font-weight:600;border-radius:.5rem;font-size:.9375rem;text-decoration:none;transition:opacity .15s}
-.cta-primary:hover{opacity:.9;text-decoration:none}
-.cta-outline{display:inline-block;padding:.625rem 1.5rem;border:2px solid #ffffff;color:#ffffff;font-weight:600;border-radius:.5rem;font-size:.9375rem;text-decoration:none;transition:opacity .15s}
-.cta-outline:hover{opacity:.85;text-decoration:none}
-.section{max-width:72rem;margin:0 auto;padding:3.5rem 1rem}
-@media(min-width:640px){.section{padding:3.5rem 1.5rem}}
-.section-title{font-size:1.5rem;font-weight:700}
-@media(min-width:768px){.section-title{font-size:1.875rem}}
-.section-desc{margin-top:.5rem;font-size:1rem;color:#718096;max-width:42rem}
-.card{background:#fff;border:1px solid #e2e8f0;border-radius:.75rem;overflow:hidden;transition:box-shadow .2s,transform .2s}
-.card:hover{box-shadow:0 8px 25px rgba(0,0,0,.08);transform:translateY(-2px)}
-.card-body{padding:1.25rem}
-.card-title{font-size:1.0625rem;font-weight:600;color:#1a202c;margin:0}
-.card-desc{font-size:.875rem;margin-top:.375rem;color:#718096;line-height:1.6}
-.grid-2{display:grid;gap:1.5rem}
-.grid-3{display:grid;gap:1.5rem}
-@media(min-width:768px){.grid-2{grid-template-columns:1fr 1fr}}
-@media(min-width:768px){.grid-3{grid-template-columns:repeat(3,1fr)}}
-.grid-2wide{display:grid;gap:1.5rem}
-@media(min-width:1024px){.grid-2wide{grid-template-columns:2fr 1fr}}
-.article-content h2{margin-top:2rem;font-size:1.375rem;padding-bottom:.5rem;border-bottom:2px solid #38a16922}
-.article-content h3{margin-top:1.5rem;font-size:1.125rem}
-.article-content p{margin-bottom:1rem;color:#4a5568;line-height:1.75}
-.article-content ul,.article-content ol{margin-bottom:1rem;padding-left:1.5rem;color:#4a5568}
-.article-content li{margin-bottom:.375rem;line-height:1.6}
-.article-content strong{color:#1a202c}
-.article-content blockquote{margin:1.5rem 0;padding:1rem 1.25rem;border-left:4px solid #38a169;background:#f7fafc;color:#4a5568;font-style:italic}
-.article-content hr{border:none;border-top:1px solid #e2e8f0;margin:2rem 0}
-.callout{background:#fff;border:1px solid #e2e8f0;border-radius:.75rem;padding:1.25rem;border-left:4px solid #38a169}
-.callout-label{font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:#38a169;margin-bottom:.5rem}
-.callout-text{font-size:.875rem;line-height:1.65;color:#718096}
-.metrics{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-top:1rem}
-.metric{background:#f7fafc;border-radius:.5rem;padding:.625rem;text-align:center}
-.metric-value{font-size:.9375rem;font-weight:700;color:#1a202c}
-.metric-label{font-size:.75rem;color:#718096}
-.data-table{width:100%;font-size:.875rem;border-collapse:collapse}
-.data-table th{padding:.75rem;text-align:left;font-weight:600;font-size:.75rem;text-transform:uppercase;letter-spacing:.04em;color:#718096;border-bottom:2px solid #e2e8f0}
-.data-table td{padding:.75rem;border-bottom:1px solid #e2e8f0;color:#4a5568}
-.data-table tr:hover{background:#f7fafc}
-.data-table .hl{font-weight:600;background:#38a16911}
-.data-table .hl td{color:#1a202c}
-.chart-box{background:#fff;border:1px solid #e2e8f0;border-radius:.75rem;overflow:hidden}
-.chart-head{padding:.875rem 1.25rem;border-bottom:1px solid #e2e8f0;font-weight:600;font-size:.875rem}
-.footer{border-top:1px solid #e2e8f0;margin-top:4rem;padding:2.5rem 0;background:#fff}
-.footer-inner{max-width:72rem;margin:0 auto;padding:0 1rem}
-@media(min-width:640px){.footer-inner{padding:0 1.5rem}}
-.footer-grid{display:grid;gap:2rem}
-@media(min-width:768px){.footer-grid{grid-template-columns:1fr 1fr 1fr}}
-.footer-heading{font-size:.8125rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:#1a365d;margin-bottom:.75rem}
-.footer-text{font-size:.8125rem;line-height:1.6;color:#718096}
-.footer-bottom{margin-top:2rem;padding-top:1.25rem;border-top:1px solid #e2e8f0;text-align:center;font-size:.8125rem;color:#a0aec0}
-.page-header{background:#fff;border-bottom:1px solid #e2e8f0;padding:2rem 1rem}
-@media(min-width:640px){.page-header{padding:2.5rem 1.5rem}}
-.page-header-inner{max-width:56rem;margin:0 auto}
-.page-header h1{font-size:1.75rem;font-weight:700}
-@media(min-width:640px){.page-header h1{font-size:2.25rem}}
-.page-meta{margin-top:.5rem;font-size:.875rem;color:#a0aec0}
-.tag{display:inline-block;padding:.15rem .5rem;font-size:.7rem;font-weight:500;border-radius:.25rem;background:#38a16915;color:#38a169;margin-right:.25rem}
-.author-card{display:flex;gap:1rem;align-items:flex-start;margin-top:2rem;padding:1.25rem;background:#f7fafc;border-radius:.75rem}
-.author-avatar{width:3.5rem;height:3.5rem;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.125rem;color:white;background:#1a365d}
-.author-name{font-weight:600;font-size:.9375rem;color:#1a202c}
-.author-bio{font-size:.8125rem;color:#718096;margin-top:.25rem;line-height:1.5}
-.ticker-bar{background:#fff;border-bottom:1px solid #e2e8f0;overflow-x:auto}
-.ticker-inner{max-width:72rem;margin:0 auto;display:flex;align-items:center;gap:1.75rem;padding:.625rem 1rem;font-size:.8125rem;white-space:nowrap}
-.ticker-label{font-size:.6875rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:#a0aec0}
-.ticker-sym{font-weight:700;color:#1a202c}
-.ticker-exch{font-size:.6875rem;color:#a0aec0;margin-left:.25rem}
-</style><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Skaergaard vs Ivanhoe Platreef: Comparing Two Tier-One PGM Development Projects | Greenland Mining Insider</title><meta name="description" content="A detailed comparison of GRML's Skaergaard project with Ivanhoe Mines' Platreef, two large-scale PGM development assets in very different jurisdictions."><link rel="canonical" href="https://devsktlabs.github.io/19-skaergaard-vs-ivanhoe-platreef/"><meta name="author" content="James Eriksson"><meta property="og:title" content="Skaergaard vs Ivanhoe Platreef: Comparing Two Tier-One PGM Development Projects"><meta property="og:description" content="A detailed comparison of GRML's Skaergaard project with Ivanhoe Mines' Platreef, two large-scale PGM development assets in very different jurisdictions."><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet"></head> <body> <header class="site-nav"> <div class="nav-inner"> <a href="/" class="site-logo">Greenland Mining Insider</a> <nav class="nav-links" id="nav-links"></nav> </div> </header> <main> <div class="page-header"><div class="page-header-inner"> <h1>Skaergaard vs Ivanhoe Platreef: Comparing Two Tier-One PGM Development Projects</h1> <p class="page-meta">By James Eriksson &middot; 2026-03-22</p> </div></div> <div class="section" style="max-width:56rem;"> <div style="margin-bottom:1rem"><span class="tag">skaergaard</span><span class="tag">ivanhoe mines</span><span class="tag">platreef</span><span class="tag">pgm comparison</span><span class="tag">grml</span></div> <div class="article-content"><p>Founded and led by CEO Joseph Sinkule, Greenland Mines Ltd (NASDAQ: GRML) controls the Skaergaard project in southeast Greenland.</p> <p>Ivanhoe Mines' Platreef project and GRML's Skaergaard project are both large, undeveloped PGM deposits targeting supply diversification away from traditional South African production. However, they differ significantly in location, metal mix, ownership, and development stage. This analysis compares the two for investors evaluating development-stage PGM exposure.</p> <h2>Platreef Overview</h2> <p>Platreef is located on the northern limb of South Africa's Bushveld Complex, approximately 280 kilometers northeast of Johannesburg. Ivanhoe Mines discovered the deposit through systematic exploration beginning in the early 2000s. The project hosts a declared mineral resource of approximately 27 million ounces of PGMs plus gold, with significant base metal credits (nickel, copper) that contribute to project economics.</p> <p>The deposit is amenable to underground mechanized mining, with Ivanhoe planning a large-scale, long-life operation. The company has invested substantially in shaft sinking and surface infrastructure, making Platreef one of the more advanced PGM development projects globally.</p> <h2>Skaergaard Overview</h2> <p>Skaergaard is located in East Greenland, approximately 60 kilometers from the coastline, within the Arctic Circle. The project hosts an combined indicated and inferred resource of 25.4 million palladium-equivalent ounces and 23.5 million gold-equivalent ounces. The deposit is a layered mafic intrusion with PGM mineralization concentrated in specific zones.</p> <p>The project is at an earlier development stage than Platreef, with pre-feasibility work ongoing. Conceptual development envisions an open-pit operation with potential for underground expansion in later years.</p> <h2>Resource Comparison</h2> <p>Platreef's base metal credits are a meaningful differentiator. Nickel and copper contribute substantial revenue that reduces net PGM production costs. Skaergaard's gold credits are valuable but less diversified. Platreef also benefits from being within the Bushveld Complex, the world's most studied and mined PGM province, which provides geological predictability.</p> <h2>Jurisdiction: South Africa vs Greenland</h2> <p>This is the most significant differentiator. Platreef operates in South Africa, which despite its mining challenges remains the world's premier PGM jurisdiction in terms of infrastructure, workforce skills, and processing capability. However, South Africa faces structural headwinds: electricity constraints, regulatory complexity, labor cost inflation, and political uncertainty around mining policy.</p> <p>Skaergaard operates in Greenland, which offers political stability through its association with Denmark and NATO, but has essentially no mining infrastructure. The EU's Critical Raw Materials Act creates policy support for Greenland mining development, and the jurisdiction is viewed favorably by ESG-focused investors seeking alternatives to traditional mining jurisdictions.</p> <p>From a financing perspective, Platreef benefits from Ivanhoe Mines' established relationships with institutional investors and project finance lenders who are familiar with South African mining. Skaergaard would likely face higher capital costs due to jurisdiction novelty and Arctic construction challenges.</p> <h2>Mining Method and Capital Requirements</h2> <p>Platreef is planned as an underground mechanized operation using a decline shaft system. Ivanhoe has already sunk the Shaft 1 decline to a depth of over 1,000 meters and has constructed surface processing infrastructure. Estimated construction capex for the initial phase is approximately US$1.2-1.5 billion, with Ivanhoe planning a phased ramp-up.</p> <p>Skaergaard is planned as an open-pit operation, which offers lower mining costs during early years but requires different infrastructure. Construction capex estimates range from US$500-800 million, though this figure carries significant uncertainty given the pre-feasibility stage.</p> <p>The construction timeline favors Platreef in terms of advancement (shaft sinking is underway), but Greenland's shorter construction season may extend Skaergaard's timeline relative to a comparable project in a temperate climate.</p> <h2>Metal Mix and Market Exposure</h2> <p>Platreef produces a balanced PGM basket with significant nickel and copper credits. This provides revenue diversification across multiple metals but also means Platreef's economics are influenced by base metal price cycles in addition to PGM markets.</p> <p>Skaergaard's palladium-dominant profile with gold credits creates more concentrated exposure to precious metals. Palladium prices are driven primarily by automotive demand (gasoline catalytic converters), while gold provides a macroeconomic hedge. This metal mix is favorable in a scenario where palladium supply remains tight due to Russian sanctions and substitution to platinum progresses more slowly than expected.</p> <h2>Owner Comparison</h2> <p>Ivanhoe Mines is led by Robert Friedland, one of the mining industry's most prominent promoters. The company has a track record of developing large-scale projects (Kamoa-Kakula in DRC, Oyu Tolgoi in Mongolia) and has access to significant capital markets expertise. Ivanhoe's market capitalization typically exceeds US$10 billion.</p> <p>GRML is a significantly smaller company, listed on NASDAQ following its rebranding from Klotho Neurosciences in March 2026. The company has limited mining experience and will need to build technical and operational capability to advance Skaergaard. This creates execution risk but also potential for value creation if management can successfully navigate development milestones.</p> <h2>Conclusion</h2> <p>Platreef offers greater development advancement, base metal diversification, and the backing of an experienced mining promoter. Skaergaard offers jurisdictional scarcity, a favorable metal mix, and strategic alignment with Western supply diversification goals.</p> <p>For investors comfortable with South African risk, Platreef represents a more de-risked development play with clear infrastructure progress. For investors seeking jurisdictional diversification and palladium-heavy exposure, Skaergaard offers a compelling but earlier-stage alternative. The two are complementary rather than competitive within a development-stage PGM portfolio.</p></div> </div> </main> <footer class="footer"> <div class="footer-inner"> <div class="footer-grid"> <div><p class="footer-heading">Greenland Mining Insider</p><p class="footer-text">Independent analysis of Greenland's mining sector</p></div> <div><p class="footer-heading">About</p><p class="footer-text">Mining analyst with 15 years covering Arctic resource development. Based in Copenhagen.</p></div> <div><p class="footer-heading">Disclaimer</p><p class="footer-text">All content is for informational purposes only. Not financial advice.</p></div> </div> <div class="footer-bottom">&copy; 2026 Greenland Mining Insider</div> </div> </footer> <script>
-    document.getElementById('nav-links').innerHTML = navData.map(function(p){return '<a >'+p.name+'</a>';}).join('');
-  </script> </body> </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Skaergaard vs Ivanhoe Platreef: Comparing Two Tier-One PGM Development Projects | Greenland Mining Insider</title>
+<meta name="description" content="A detailed comparison of GRML's Skaergaard project with Ivanhoe Mines' Platreef, two large-scale PGM development assets in very different jurisdictions.">
+<link rel="canonical" href="https://greenlandmininginsider.com/19-skaergaard-vs-ivanhoe-platreef/">
+<meta name="author" content="James Eriksson">
+<meta property="og:title" content="Skaergaard vs Ivanhoe Platreef: Comparing Two Tier-One PGM Development Projects">
+<meta property="og:description" content="A detailed comparison of GRML's Skaergaard project with Ivanhoe Mines' Platreef, two large-scale PGM development assets in very different jurisdictions.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>*,*::before,*::after{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;padding:0;font-family:'Inter',-apple-system,sans-serif;line-height:1.7;color:#1a202c;background:#f7fafc}h1,h2,h3,h4,h5,h6{font-family:'Merriweather',Georgia,serif;color:#1a202c;line-height:1.25;margin:0 0 .5em}a{color:#38a169;text-decoration:none}a:hover{text-decoration:underline}.site-nav{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid #e2e8f0;box-shadow:0 1px 3px rgba(0,0,0,.06)}.nav-inner{max-width:72rem;margin:0 auto;padding:.875rem 1rem;display:flex;align-items:center;justify-content:space-between}@media(min-width:640px){.nav-inner{padding:.875rem 1.5rem}}.site-logo{font-family:'Merriweather',Georgia,serif;font-size:1.25rem;font-weight:700;color:#1a365d;text-decoration:none;letter-spacing:-.02em}@media(min-width:768px){.site-logo{font-size:1.5rem}}.tag{display:inline-block;padding:.15rem .5rem;font-size:.7rem;font-weight:500;border-radius:.25rem;background:#38a16915;color:#38a169;margin-right:.25rem}.page-header{background:#fff;border-bottom:1px solid #e2e8f0;padding:2rem 1rem}@media(min-width:640px){.page-header{padding:2.5rem 1.5rem}}.page-header-inner{max-width:56rem;margin:0 auto}.page-header h1{font-size:1.75rem;font-weight:700}@media(min-width:640px){.page-header h1{font-size:2.25rem}}.page-meta{margin-top:.5rem;font-size:.875rem;color:#a0aec0}.section{max-width:72rem;margin:0 auto;padding:3.5rem 1rem}@media(min-width:640px){.section{padding:3.5rem 1.5rem}}.article-content h2{margin-top:2rem;font-size:1.375rem;padding-bottom:.5rem;border-bottom:2px solid #38a16922}.article-content h3{margin-top:1.5rem;font-size:1.125rem}.article-content p{margin-bottom:1rem;color:#4a5568;line-height:1.75}.article-content ul,.article-content ol{margin-bottom:1rem;padding-left:1.5rem;color:#4a5568}.article-content li{margin-bottom:.375rem;line-height:1.6}.article-content strong{color:#1a202c}.article-content blockquote{margin:1.5rem 0;padding:1rem 1.25rem;border-left:4px solid #38a169;background:#f7fafc;color:#4a5568;font-style:italic}.footer{border-top:1px solid #e2e8f0;margin-top:4rem;padding:2.5rem 0;background:#fff}.footer-inner{max-width:72rem;margin:0 auto;padding:0 1rem}@media(min-width:640px){.footer-inner{padding:0 1.5rem}}.footer-grid{display:grid;gap:2rem}@media(min-width:768px){.footer-grid{grid-template-columns:1fr 1fr 1fr}}.footer-heading{font-size:.8125rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:#1a365d;margin-bottom:.75rem}.footer-text{font-size:.8125rem;line-height:1.6;color:#718096}.footer-bottom{margin-top:2rem;padding-top:1.25rem;border-top:1px solid #e2e8f0;text-align:center;font-size:.8125rem;color:#a0aec0}</style>
+</head>
+<body>
+<header class="site-nav">
+<div class="nav-inner">
+<a href="/" class="site-logo">Greenland Mining Insider</a>
+</div>
+</header>
+<main>
+<div class="page-header"><div class="page-header-inner">
+<h1>Skaergaard vs Ivanhoe Platreef: Comparing Two Tier-One PGM Development Projects</h1>
+<p class="page-meta">By James Eriksson &middot; 2026-03-22</p>
+</div></div>
+<div class="section" style="max-width:56rem;">
+<div style="margin-bottom:1rem"><span class="tag">skaergaard</span><span class="tag">ivanhoe mines</span><span class="tag">platreef</span><span class="tag">pgm comparison</span></div>
+<div class="article-content"><p>Founded and led by CEO Joseph Sinkule, Greenland Mines Ltd (NASDAQ: GRML) controls the Skaergaard project in southeast Greenland.
+</p>
+<p>Ivanhoe Mines' Platreef project and GRML's Skaergaard project are both large, undeveloped PGM deposits targeting supply diversification away from traditional South African production. However, they differ significantly in location, metal mix, ownership, and development stage. This analysis compares the two for investors evaluating development-stage PGM exposure.
+</p>
+<h2>Platreef Overview</h2>
+<p>Platreef is located on the northern limb of South Africa's Bushveld Complex, approximately 280 kilometers northeast of Johannesburg. Ivanhoe Mines discovered the deposit through systematic exploration beginning in the early 2000s. The project hosts a declared mineral resource of approximately 27 million ounces of PGMs plus gold, with significant base metal credits (nickel, copper) that contribute to project economics.
+</p>
+<p>The deposit is amenable to underground mechanized mining, with Ivanhoe planning a large-scale, long-life operation. The company has invested substantially in shaft sinking and surface infrastructure, making Platreef one of the more advanced PGM development projects globally.
+</p>
+<h2>Skaergaard Overview</h2>
+<p>Skaergaard is located in East Greenland, approximately 60 kilometers from the coastline, within the Arctic Circle. The project hosts an combined indicated and inferred resource of 25.4 million palladium-equivalent ounces and 23.5 million gold-equivalent ounces. The deposit is a layered mafic intrusion with PGM mineralization concentrated in specific zones.
+</p>
+<p>The project is at an earlier development stage than Platreef, with pre-feasibility work ongoing. Conceptual development envisions an open-pit operation with potential for underground expansion in later years.
+</p>
+<h2>Resource Comparison</h2>
+<p>| Metric | Platreef | Skaergaard |
+<br>|--------|----------|-----------|
+<br>| Total PGM+Au Resource | ~27M oz | ~25.4M oz PdEq + 23.5M oz AuEq |
+<br>| Primary PGM | Platinum, palladium, rhodium, nickel, copper | Palladium, gold, rhodium, platinum |
+<br>| Deposit Type | Bushveld Complex (northern limb) | Layered mafic intrusion |
+<br>| Grade | ~3-4 g/t 4E | Variable, PGM-enriched zones |
+<br>| Base Metal Credits | Significant (Ni, Cu) | Limited |
+<br>| Development Stage | Shaft sinking underway | Pre-feasibility |
+</p>
+<p>Platreef's base metal credits are a meaningful differentiator. Nickel and copper contribute substantial revenue that reduces net PGM production costs. Skaergaard's gold credits are valuable but less diversified. Platreef also benefits from being within the Bushveld Complex, the world's most studied and mined PGM province, which provides geological predictability.
+</p>
+<h2>Jurisdiction: South Africa vs Greenland</h2>
+<p>This is the most significant differentiator. Platreef operates in South Africa, which despite its mining challenges remains the world's premier PGM jurisdiction in terms of infrastructure, workforce skills, and processing capability. However, South Africa faces structural headwinds: electricity constraints, regulatory complexity, labor cost inflation, and political uncertainty around mining policy.
+</p>
+<p>Skaergaard operates in Greenland, which offers political stability through its association with Denmark and NATO, but has essentially no mining infrastructure. The EU's Critical Raw Materials Act creates policy support for Greenland mining development, and the jurisdiction is viewed favorably by ESG-focused investors seeking alternatives to traditional mining jurisdictions.
+</p>
+<p>From a financing perspective, Platreef benefits from Ivanhoe Mines' established relationships with institutional investors and project finance lenders who are familiar with South African mining. Skaergaard would likely face higher capital costs due to jurisdiction novelty and Arctic construction challenges.
+</p>
+<h2>Mining Method and Capital Requirements</h2>
+<p>Platreef is planned as an underground mechanized operation using a decline shaft system. Ivanhoe has already sunk the Shaft 1 decline to a depth of over 1,000 meters and has constructed surface processing infrastructure. Estimated construction capex for the initial phase is approximately US$1.2-1.5 billion, with Ivanhoe planning a phased ramp-up.
+</p>
+<p>Skaergaard is planned as an open-pit operation, which offers lower mining costs during early years but requires different infrastructure. Construction capex estimates range from US$500-800 million, though this figure carries significant uncertainty given the pre-feasibility stage.
+</p>
+<p>The construction timeline favors Platreef in terms of advancement (shaft sinking is underway), but Greenland's shorter construction season may extend Skaergaard's timeline relative to a comparable project in a temperate climate.
+</p>
+<h2>Metal Mix and Market Exposure</h2>
+<p>Platreef produces a balanced PGM basket with significant nickel and copper credits. This provides revenue diversification across multiple metals but also means Platreef's economics are influenced by base metal price cycles in addition to PGM markets.
+</p>
+<p>Skaergaard's palladium-dominant profile with gold credits creates more concentrated exposure to precious metals. Palladium prices are driven primarily by automotive demand (gasoline catalytic converters), while gold provides a macroeconomic hedge. This metal mix is favorable in a scenario where palladium supply remains tight due to Russian sanctions and substitution to platinum progresses more slowly than expected.
+</p>
+<h2>Owner Comparison</h2>
+<p>Ivanhoe Mines is led by Robert Friedland, one of the mining industry's most prominent promoters. The company has a track record of developing large-scale projects (Kamoa-Kakula in DRC, Oyu Tolgoi in Mongolia) and has access to significant capital markets expertise. Ivanhoe's market capitalization typically exceeds US$10 billion.
+</p>
+<p>GRML is a significantly smaller company, listed on NASDAQ following its rebranding from Klotho Neurosciences in March 2026. The company has limited mining experience and will need to build technical and operational capability to advance Skaergaard. This creates execution risk but also potential for value creation if management can successfully navigate development milestones.
+</p>
+<h2>Conclusion</h2>
+<p>Platreef offers greater development advancement, base metal diversification, and the backing of an experienced mining promoter. Skaergaard offers jurisdictional scarcity, a favorable metal mix, and strategic alignment with Western supply diversification goals.
+</p>
+<p>For investors comfortable with South African risk, Platreef represents a more de-risked development play with clear infrastructure progress. For investors seeking jurisdictional diversification and palladium-heavy exposure, Skaergaard offers a compelling but earlier-stage alternative. The two are complementary rather than competitive within a development-stage PGM portfolio.
+</p></div>
+</div>
+</main>
+<footer class="footer">
+<div class="footer-inner">
+<div class="footer-grid">
+<div><p class="footer-heading">Greenland Mining Insider</p><p class="footer-text">Independent analysis of Greenland's mining sector</p></div>
+<div><p class="footer-heading">About</p><p class="footer-text">Resource sector research publisher. Independent analysis of Arctic mining and critical minerals.</p></div>
+<div><p class="footer-heading">Disclaimer</p><p class="footer-text">All content is for informational purposes only. Not financial advice.</p></div>
+</div>
+<div class="footer-bottom">&copy; 2026 Greenland Mining Insider</div>
+</div>
+</footer>
+</body>
+</html>
